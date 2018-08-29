@@ -1,0 +1,9 @@
+Miten laatu näkyy projektisuunnitelmassa - Harj. 5
+
+Projektisuunnitelmassa pitäisi ottaa huomioon dokumenttien laatu ja sen valvonta. Laadukkaiden dokumenttien pitäisi sisältää projektin vaatimukset ja asiakkaan toiveet. Koko dokumentin pitäisi olla helposti luettava ja asiat pitäisi indikoida mahdollisimman selvästi. Dokumenteista pitäisi saada käsitys projektista, ilman tietämystä aiheesta etukäteen.
+
+Tuotteen laatu varmistetaan lukuisilla testeillä ja jatkuvalla korjauksella. Kun ominaisuus tuotetaan, se pitäisi välittömästi testata ja varmistaa, että se on asiakkaan toiveiden mukainen. Projektisuunnitelmassa tuotteen laatu pitäisi määritellä ja minimi ominaisuudet selventää.
+
+Laadunvalvontakatsomuksissa tarkistetaan laadun taso ja sen ylläpito. Näissä katsomuksissa tarkistetaan tuotteen laatu ja sisältö, sekä dokumentoinnin laadun taso. Nämä laadunvalvontakatsomukset pitäisi mainita projektisuunnitelmassa ja aikavälistä näiden välillä pitäisi sopia tiimin kanssa.
+
+Laatuun pitäisi myös sisältää asiakkaan kommentit ja toiveet, budjetin rajoissa.
