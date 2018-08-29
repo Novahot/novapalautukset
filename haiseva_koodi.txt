@@ -1,0 +1,1 @@
+Haiseva koodi on epäefektiivistä tai absoluuttisen liian huonosti selitettyä koodia. Koodin efektiivisyyteen vaikuttaa sen luettavuus, toimivuus ja tarpeellisuus. Blogissa kerrotaan mihin asioihin koodaajan kannattaisi kiinnittää huomiota.
