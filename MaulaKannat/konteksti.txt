@@ -1,0 +1,20 @@
+K‰ytt‰j‰:
+	- K‰ytt‰j‰T
+	- Etunimi
+	- Sukunimi
+	- Salasana
+	- VuokraajaBoolean
+	- K‰ytt‰j‰ID (PK)
+Vuokrailmoitus:
+	- Osoite
+	- Sijainti
+	- Pinta-ala
+	- Asuntotyyppi
+	- Tarjoaja (K‰ytt‰j‰ID FK)
+	- Puh
+	- AsuntoID (PK)
+	- IlmoitusPvm
+Katsoja:
+	- KatsojaID (PK)
+	- AsuntoID (F)
+	- N‰yttˆPvm
