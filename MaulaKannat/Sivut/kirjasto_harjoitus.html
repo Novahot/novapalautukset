@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kirjaston tietokanta</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script type="text/javascript" src="header2.js"> </script>
+<body>
+<div id="sisalto">
+  <h1>Kirjaston tietokannan suunnittelu ja toteutus ja testaus </h1>
+  <h4>Lähtökohta</h4>
+  <p>Oy Pulju Ab:llä on työntekijöiden käyttöön tarkoitettu kirjasto, jossa  on lainattavana kirjoja, lehtiä, CD- ja DVD-levyjä. Kirjasto toimii osittain  itsepalveluperiaatteella ja lisäksi sinne on palkattu yksi kirjastovirkailija. </p>
+  <p>    Tehtävänäsi on suunnitella,  toteuttaa ja testata MySQL-tietokanta rakenteilla olevaan ohjelmistoon, jonka  avulla pitäisi näppärästi hoitua kaikki kirjaston tietojenkäsittelyyn liittyvät  toiminnot. 
+    Seuraavassa hiukan tarkempi selvitys järjestelmästä.</p>
+	<p>Työstä palautetaan yksi kokoava <a href="dokumentti_h4.pdf">Word-asiakirja</a>.</p>
+  <h4>Toiminnot pääpiirteittäin</h4>
+  <ul type="disc">
+    <li>lainattavien käsittely</li>
+    <ul type="circle">
+      <li>lisäys</li>
+      <li>muutos</li>
+      <li>poisto</li>
+      <li>kysely</li>
+      <ul type="square">
+        <li>onko tietty kappale lainattavissa</li>
+      </ul>
+      <li>raportit lainattavista        (hakuehdoin)</li>
+    </ul>
+    <li>lainaajien käsittely </li>
+    <ul type="circle">
+      <li>lisäys</li>
+      <li>muutos</li>
+      <li>poisto (työntekijä poistuu Oy        Pulju Ab:n palveluksesta)</li>
+      <li>kysely</li>
+      <ul type="square">
+        <li>tietyn lainaajan yhteystiedot</li>
+      </ul>
+    </ul>
+    <li>varausten käsittely </li>
+    <ul type="circle">
+      <li>varaaminen</li>
+      <li>varaustilanteen tarkastelu (onko        kappaleesta paljon varauksia, milloin eräpvm)</li>
+    </ul>
+    <li>lainaus</li>
+    <li>palautus</li>
+    <li>karhuaminen eli muistutus (sakkoja ei peritä) </li>
+  </ul>
+  <p><img src="../Kuvat/kirjasto_usecase.png" width="513" height="565" alt=""/></p>
+  <h4>Tietokannan  suunnittelu<br />
+  </h4>
+  <p>Lue ennen tämän tekemistä alla olevat kyselytehtävätkin;  niistä saat vinkkejä tietokannan kenttien suunnitteluun. Tehtävän  suunnitteluosuudesta palautetaan:</p>
+  <ul type="disc">
+    <li>ER-kaavio: käytä Visio 2013:n Chen's Database Notation-kaaviota</li>
+    <li>Tietokannan rakenteen kuvaus: käytä Visio 2013: Crow's Foot Database -kaaviota. Pystyt määrittämään kentät (Show attributes).
+	<p><img src="../Kuvat/visio_crows_foot_notation.png" /></p>
+	<p><img src="../Kuvat/visio_crows_foot_notation_2.png" width="250" /></p>
+	</li>
+  </ul>
+  <p>Tässä vaiheessa tarkistetaan tietokantasuunnitelmat; ensin  tekijä tarkistaa, sitten kaveri tarkistaa ja lopuksi Eerikki. (laadi <a href="http://www.oamk.fi/~tuijaj/suomen_kieli/muistio.htm">muistio</a> kahdesta jälkimmäisestä tarkistuksesta, katso <a href="muistioesimerkki.pdf">esimerkki</a>)</p>
+  <p>    Tietokanta  toteutetaan MySQL:llä. Liitä Create table -lausekkeet dokumenttiin.</p>
+  <p>    Tietokannan testausta varten tehdään tapausluettelo ja tietokanta  testataan sen mukaan.<br clear="all" />
+  </p>
+  <h4>Kyselyiden teko  tietokantaan</h4>
+  <p> Tästä osioista palautetaan SQL-kysely ja (jos haluat niin vastaus).  Eli muista koota <a href="dokumentti_h4.pdf">Word-tiedostoa</a>. Palautuksena vain yksi kokoava Word-asiakirja.</p>
+  <ol>
+    <li>Tee kysely, jonka avulla saat selville,  millaisia lainauksia (myös lainassa olevan tuotteen perustiedot esim. kirjan  nimi pitäisi tulla näkyviin) tietyn nimisellä lainaajalla on tällä hetkellä.</li>
+    <li>Tee kysely, jonka avulla saat selville tällä  hetkellä myöhässä olevat lainaukset karhuamista varten (myös lainaajan nimi ja  sähköpostiosoite pitää tulla näkyviin). Vastaukseen pitää tulla kaikki kentät,  jotka kirjastovirkailija tarvitsee kirjoittaakseen karhun lainaajan  sähköpostiin.</li>
+    <li>Ketkä kaikki lainaajat ovat jossakin vaiheessa lainanneet  Aleksis Kiven Seitsemän veljestä?</li>
+    <li>Tee kysely, jonka avulla saat selville, kuinka  paljon lainauksia kullakin lainaajalla on tietokannassa tällä hetkellä.</li>
+    <li>Tee kysely, jonka avulla saat selville, mitä  tuotteita ei ole lainattu koskaan.</li>
+    <li>Tee kysely, jonka avulla saat informatiivisen  listan kuluvan vuoden lainauksista.</li>
+    <li>Tee kysely, joka tuottaa listan kaikista  lainattavista tuotteista tuotetyypeittäin eli erikseen kirjat, lehdet dvd:t  jne.</li>
+  </ol>
+  <p>Palautus viimeistään perjantaina xx.xx. sähköpostilla, jonka  liitteenä on yksi <a href="dokumentti_h4.pdf">Word-dokumentti</a>, johon on koottu kaikki em. asiat sekä tietysti  tieto, miten pääsen testaamaan kantaasi. </p>
+</div>
+<script type="text/javascript" src="footer.js"> </script>
+</body>
+</html>

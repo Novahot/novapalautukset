@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verkkokaupan tietokanta (I)</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script type="text/javascript" src="header2.js"> </script>
+<body>
+<div id="sisalto">
+  <h1>Verkkokaupan tietokanta (I)</h1>
+  
+  <p>Tehtävänäsi on suunnitella verkkokauppaa varten relaatiotietokanta, joka toteutetaan MySQL:llä.
+<p>Tehtävästä syntyy pikkuhiljaa Wordilla tehty tietokantadokumentti (siis vain 1 tiedosto), jossa ovat seuraavien vaiheiden mukaiset kuvaukset. Tämä on yksi kurssin pakollisista tehtävistä.
+<p>Vaiheet
+
+<ol>
+<li>Mieti ensin, mitä tietoja verkkokaupassa tarvitaan (pelkät tuotteet eivät riitä). Tee ER-kaavio (Visio Flowchart) suunnittelemasi tietokannan käsitteistöstä.</li>
+
+<li>Tee tietokannan rakenteen kuvaus (Visio: Software and Database: Database Model). Huom.! Tähän kuuluvat myös kenttäkohtaiset määritykset.</li>
+
+<li>Esittele suunnitelmasi opelle ja korjaa tarvittaessa.</li>
+
+<li>Luo taulukot MySQL-tietokantaan.  Ja tulosta luontilausekkeet (SHOW CREATE TABLE taulukon_nimi). 
+Huom.! Taulukot kannattaa nimetä niin, että jokaisen edessä on jokin sama tunniste, joka kertoo, että ne kuuluvat juuri tähän tietokantaan.</li>
+
+<li>Luo yhteydet ja viite-eheydet. (Katso erillinen ohjeistus.) Näistäkin pitää olla kuvaus dokumentissa.</li>
+<li>Syötä jonkin verran dataa tietokantaan.</li>
+<li>Tee tapausluettelo, jossa on testattavan seuraavien komentojen mukaisia tapauksia. Tapaukset pitää olla sen verran monipuolisia, että kaikki taulukot ja niiden väliset yhteydet tulevat testattua.</li>
+
+<table width="505" height="138">
+<tr><th height="29">Testattava asia	</th><th>SQL-lause	</th><th>Mitä pitäisi tapahtua	</th><th>Mitä tapahtui	</th><th>Milloin testattu </th><th>Milloin korjattu</th></tr>
+<tr><td height="25"></td><td></td><td></td><td></td><td></td><td></td></tr>	
+<tr><td height="20"></td><td></td><td></td><td></td><td></td><td></td></tr>	
+<tr><td height="24"></td><td></td><td></td><td></td><td></td><td></td></tr>	
+<tr><td height="26"></td><td></td><td></td><td></td><td></td><td></td></tr>	
+</table>				
+				
+<ul>
+<li>a.	Insert</li>
+<li>b.	Delete Huom.! Viite-eheyden testaus</li>
+<li>c.	Update</li>
+<li>d.	Select</li>
+<li>e.	Select useampaan taulukkoon</li>
+</ul>
+
+<li>Testaa tietokantasi ja täytä samalla tapausluetteloa. </li>
+<li>Testaa jonkun kaverisi tietokanta ja tee testauksesta muistio.</li>
+<li>Liitä palautustiedostoon tieto siitä, miten pääsen testaamaan tietokantaasi (tietokannan nimi, tunnus, yms.)</li>
+</ol>
+
+<p>Koko työ palautetaan viimeistään perjantaina 19.8.2015 s-postilla (2 liitettä).
+
+
+
+<h4>Lisäselvitystä verkkokaupasta</h4>
+
+<p>Mieti tarkkaan, mitkä seuraavista toiminnoista vaikuttavat ja liittyvät tietokantaan
+<p>Asiakas
+<ul>
+<li>voi lukea tiedotteita</li>
+<li>voi selailla kaupan tuotteita ja tuoteryhmiä</li>
+<li>voi rekisteröityä </li>
+<li>voi tilata ja valita maksutavan </li>
+<li>voi seurata ostoskoriaan</li>
+<li>voi seurata teknisiä vaiheita ostoprosessissa (teknisillä vaiheilla tarkoitetaan rekisteröitymistä, tuotteiden keräämistä ostoskoriin ja tilauksen hyväksymistä)</li> 
+<li>saa vahvistuksen kaupasta yhteystietoineen ja peruuttamis- ja palauttamisohjeineen</li>
+<li>voi peruuttaa missä vaiheessa tahansa tilauksen</li>
+<li>voi antaa palautetta palautelomakkeella</li>
+</ul>
+<p>Lisäksi asiakas
+<ul>
+<li>voi lukea kuluttajansuojalain mukaiset yrityksen yhteystiedot (kuvitellussa yrityksessäkin on oltava merkittynä paikka, jossa rekisteritunnukset ovat)</li>
+<li>voi varmistaa, että henkilötietojen käsittely on tietosuojavaltuutetun ohjeiden mukaista – esimerkki lain vaatimat rekisteriselosteet</li>
+<li>voi lukea sopimusehdot ennen tilauksen hyväksymistä </li>
+<li>voi lukea kaupan peruuttamisohjeet</li>
+</ul>
+<p>Kaupan ylläpitäjä 
+<ul>
+<li>voi lisätä, päivittää ja poistaa tuoteryhmiä ja tuotteita tuotetietoineen ja kuvineen (muista myös linkit valmistajan kotisivustolle)</li>
+<li>päivittää tiedotteita sivustolla</li>
+<li>hallinnoida (seurata, päivittää ja poistaa) tilauksia</li>
+<li>hallinnoida (seurata, päivittää ja poistaa) rekisteröityneitä asiakkaita</li>
+<li>lukea seurantaraportteja (esim. toteutuneista kaupoista jne.)</li>
+<li>lukea ja antaa vastauksia asiakaspalautteisiin</li>
+</ul>
+</div>
+<script type="text/javascript" src="footer.js"> </script></body>
+</html>

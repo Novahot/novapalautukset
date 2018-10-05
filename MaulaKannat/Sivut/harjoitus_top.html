@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harjoitus: työssäoppimistietokanta</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script type="text/javascript" src="header2.js"> </script>
+<body>
+<div id="sisalto">
+  <h1>7.Harjoitus : Datanomiopiskelijoiden työssäoppimisen tietokanta </h1>
+  <p>Tehtävästä  syntyy pikkuhiljaa Wordilla tehty tietokantadokumentti (siis vain 1 tiedosto),  jossa ovat seuraavien vaiheiden mukaiset kuvaukset. Tämä on taas yksi kurssin  pakollisista tehtävistä.<br />
+  </p>
+  <h4>Lähtökohta</h4>
+  <p>Opiskelijoilla on työssäoppimista toisena ja kolmantena  opiskeluvuotena. Tähän tietokantaan on tarkoitus tallentaa ainakin:</p>
+  <ul>
+    <li>Opiskelijan perustiedot</li>
+    <li>Opiskelijan tutkinto (esim. Tieto- ja viestintätekniikan pt, Liiketoiminnan pt, Tieto- ja tietoliikennetekniikan pt jne.)</li>
+    <li>työssäoppimispaikkojen perustiedot
+      <ul>
+        <li>työpaikan työpaikkaohjaajat, joita voi tietyssä  yrityksessä olla useitakin</li>
+      </ul>
+    </li>
+    <ul>
+      <li>työpaikan näyttöjen suoritusmahdollisuus (mitä näyttöjä tässä työpaikassa on mahdollista tehdä)</li>
+    </ul>
+    <li>opiskelijoiden työssäoppimisien tiedot</li>
+      <ul>
+        <li>koska työssäoppiminen alkaa, koska päättyy</li>
+        <li>kuka on ohjaava opettaja</li>
+      </ul>
+      <li>tietokantaan pitäisi pystyä tallentamaan myös  opiskelijoiden ja ohjaavan opettajan kommentit firman tms. sopivuudesta  työssäoppimiseen</li>
+      <li>Jokaisella tutkinnolla on erilaiset näytöt, yhdessä työpaikassa voi kuitenkin mahdollisesti suorittaa monen eri tutkinnon näyttöjä.</li>
+  </ul>
+    </ul>
+	<p>Esimerkkejä Tieto- ja viestintätekniikan pt:n näytöistä:
+  <ul>
+      <li>Palvelutehtävissä toimiminen</li>
+      <li>Järjestelmän hankinta ja käyttöönotto</li>
+      <li>Sähköisten asiointipalveluiden toteuttaminen</li>
+      <li>Ohjelmiston tuotantoversion toteuttaminen</li>
+      <li>Ohjelmiston prototyypin toteuttaminen</li>
+      <li>Kehitysympäristön käyttö</li>
+      <li>Ylläpitotehtävissä toimiminen</li>
+      <li>Palvelujen käyttöönotto ja tuki</li>
+    </ul>
+    <p>&nbsp;</p>
+  </ul>
+  <p>Vaiheet</p>
+  <ol>
+    <li>Mieti ensin, mitä tietoja tarvitaan. Tee  ER-kaavio suunnittelemasi tietokannan käsitteistöstä.</li>
+    <li>Tee tietokannan rakenteen kuvaus. Huom.! Tähän  kuuluvat myös kenttäkohtaiset määritykset. Mieti myös järkevät  viite-eheysmääritykset.</li>
+    <li>Esittele suunnitelmasi opettajalle ja/tai  luotettavalle ja osaavalle kaverille ja korjaa tarvittaessa.</li>
+    <li>Kirjoita taulukoiden luontilausekkeet.</li>
+    <li>Luo taulukot, yhteydet ja viite-eheydet MySQL-tietokantaan.   Huom.! Taulukot kannattaa nimetä niin,  että jokaisen edessä on jokin sama tunniste, joka kertoo, että ne kuuluvat  juuri tähän tietokantaan.</li>
+    <p>Syötä jonkin  verran dataa tietokantaan.</p>
+    <li>Tee tapausluettelo, jossa on testattavan  seuraavien komentojen mukaisia tapauksia. Tapaukset pitää olla sen verran  monipuolisia, että kaikki taulukot ja niiden väliset yhteydet tulevat  testattua.</li>
+    <table border="1" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="137" valign="top"><p>Testattava    asia</p></th>
+        <th width="125" valign="top"><p>SQL-lause</p></th>
+        <th width="134" valign="top"><p>Mitä    pitäisi tapahtua</p></th>
+        <th width="133" valign="top"><p>Mitä    tapahtui</p></th>
+        <th width="118" valign="top"><p>Milloin    testattu ja milloin korjattu</p></th>
+      </tr>
+      <tr>
+        <td width="137" valign="top"><p>&nbsp;</p></td>
+        <td width="125" valign="top"><p>&nbsp;</p></td>
+        <td width="134" valign="top"><p>&nbsp;</p></td>
+        <td width="133" valign="top"><p>&nbsp;</p></td>
+        <td width="118" valign="top"><p>&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td width="137" valign="top"><p>&nbsp;</p></td>
+        <td width="125" valign="top"><p>&nbsp;</p></td>
+        <td width="134" valign="top"><p>&nbsp;</p></td>
+        <td width="133" valign="top"><p>&nbsp;</p></td>
+        <td width="118" valign="top"><p>&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td width="137" valign="top"><p>&nbsp;</p></td>
+        <td width="125" valign="top"><p>&nbsp;</p></td>
+        <td width="134" valign="top"><p>&nbsp;</p></td>
+        <td width="133" valign="top"><p>&nbsp;</p></td>
+        <td width="118" valign="top"><p>&nbsp;</p></td>
+      </tr>
+    </table>
+    <li>Testaa  tietokantasi ja täytä samalla tapausluetteloa. </li>
+    <li>Liitä palautustiedostoon tieto siitä, miten pääsen  testaamaan tietokantaasi (tietokannan nimi, tunnus, yms.)</li>
+    <li>Tee  tietokantaan seuraavat kyselyt ja kopioi toimivat kyselyt dokumenttiisi.
+      <ol>
+        <li>Hae kaikkien viime keväänä ohjelmistotuotannon  koulutusohjelmasta valmistuneiden datanomien työssäoppimisien tiedot.</li>
+        <li>Hae ne firmat, jotka ovat sopivia omaksi  työssäoppimispaikaksesi 2. jaksossa. Firmoissa pitää pystyä näyttämään ainakin näytöt Palvelutehtävissä toimiminen ja Järjestelmän hankinta ja käyttöönotto.</li>
+        <li>Hae kaikki ulkomaisiin työssäoppimispaikkoihin  liittyvät opiskelijoiden kommentit.</li>
+        <li>Missä firmassa on ollut eniten työssäoppimisia?</li>
+        <li>Missä firmassa on ollut eniten työssäoppimisia  jaoteltuna koulutusohjelmittain?</li>
+      </ol>
+    </li>
+  </ol>
+</div>
+<script type="text/javascript" src="footer.js"> </script>
+</body>
+</html>

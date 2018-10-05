@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verkkokaupan tietokanta (I)</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script type="text/javascript" src="header2.js"> </script>
+<body>
+<div id="sisalto">
+  <h1>Verkkokaupan tietokanta (II)</h1>
+  <p>Tämä tehtävä perustuu jo suunniteltuun ja tehtyyn verkkokaupan tietokantaan.
+  </p>
+  <ol>
+    <li> Kopioi tietokantasi rakenne (DatabaseModel Diagram) ja kenttämääritykset sekä viite-eheysmääritykset uuteen Word-tiedostoon (tai pdf). Oma nimi mukaan ylätunnisteelle.
+    </li>
+    <li> Lähetä suunnitelmasi henkilölle, jonka nimi selviää tuota pikaa (<a href="verkkokauppa_2_tekijat.xlsx">lista</a>). 
+    </li>
+    <li>Tutki saamaasi suunnitelmaa ja kirjoita Wordilla muistio siitä, mitä asioita suunnitelmassa    <ul>
+        <li> ihmettelet
+       	</li>
+        <li>pidät erityisen hyvänä
+        </li>
+        <li> jos löydät suoranaisia virheitä, korjaa ne perustellusti, mutta kirjoita nekin muistiin (eli missä vika, miksi korjasit ja miten).
+        </li>
+		<li><a href="h3_muistio_esimerkki.pdf">Esimerkki muistiosta</a></li>
+      </ul>
+    </li>
+    <li> Muistion voit tässä vaiheessa lähettää suunnitelman tekijälle tiedoksi.    </li>
+    <li> Toteuta saamasi tietokantasuunnitelma MS Access-tietokantana</li>
+    <li> Syötä muutama tietue tietokantaan ikään kuin testausmielessä.
+    </li>
+    <li> Laadi tilauksista pää-alilomake jonka avulla voi selata tilauksia asiakkaittain.
+    </li>
+    <li>Laadi <a href="h3_asiakkaiden_tilaukset.pdf">tilausraportti</a> (tilaukset, tilausrivit, tuotteiden nimi ja hinta, asiakkaiden nimet).
+    </li>
+    <li> Palauta tietokanta, jossa on mukana em. lomake ja raportti, zipattuna sähköpostilla ja palauta samalla opiskelutoveriltasi saamasi tietokantasuunnitelma sekä sen arviointi, jonka teit tehtäväkohdan 3 aikana (muista laittaa nimesi näkyviin). </li>
+  </ol>
+  <p>&nbsp;</p>
+  
+  <h4>MS Access-kertausta</h4>
+  <h5>Tyhjä tietokanta</h5>
+<p>  Kun aloitat uuden työn niin tarkista mihin tiedosto luodaan! Oletuksena C-asemalla, vaihda tämä K-asemalle!</p>
+<p><img src="../Kuvat/access_blank_database.png" />
+  
+  <h5>Taulujen luonti</h5>
+<p>  Taulut kannattaa tehdä Design-näkymässä (<b>Create / Table Design</b>). Pääavain mielellään Autonumber ja muista tälle Primary Key</p>
+<p><img src="../Kuvat/access_table_design.png" />
+
+  <h5>Yhteydet</h5>
+<ul>
+  <li>Database tools / Relationships</li>
+  <li>Muista asettaa Referential Integrity!
+  <p><img src="../Kuvat/access_referential_integrity.png" /></p>
+  </li>
+  </ul>
+  
+  <h5>Taulun lookup-haku</h5>
+<ul>
+  <li>Kun yhteydet ovat kunnossa voit määritellä taulun vierasavaimille haun (lookup) jotta tietojen lisääminen tapahtuisi helpommin.</li>
+  <li>Taulun suunnittelunäkymä (Design View), valitse kenttä ja siirry Lookup-välilehdelle
+  <p><img src="../Kuvat/access_lookup.png" /></p>
+  </li>
+  <li>Row Source: taulu josta tämän kentän tietoja haetaan</li>
+  <li>Column Count: montako saraketta näytetään</li>
+  </ul>
+  
+  <h5>Alilomakkeen tekeminen</h5>
+  <ul>
+	<li>tee ensin lomake (form) tilaukset-taulustasi</li>
+	<li>tämän jälkeen raahaa tilausrivit-taulukko lomakkeelle Design-näkymässä
+	<p><img src="../Kuvat/alilomake_1.png" /></p>
+	</li>
+  </ul>  
+  <h5>Raporttien toiminnot</h5>
+  
+  <ul>
+	<li>Tilausraportin tiedot haetaan monesta eri taulusta - tarvitset kyselyn (Query) tämän raportin tietolähteeksi. Tee siis 1. uusi kysely jossa halutut lähdetiedot ja 2. tämän jälkeen uusi raportti (Report) jonka tietolähteeksi valitset äsken tekemäsi kyselyn.</li>
+	<li>Tee raportti ohjatun toiminnon avulla, valitse tietolähteeksi kyselysi ja katso tietoja "tilauksittain":  <p><img src="../Kuvat/access_report.png" /></p>
+</li>
+	<li>Lisää raportille välisummat Design-näkymässä Totals-toiminnon avulla</li>
+  </ul>
+  <p>  
+  <p>  
+</div>
+<script type="text/javascript" src="footer.js"> </script></body>
+</html>

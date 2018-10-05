@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tietokannan testauslomake</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script type="text/javascript" src="header2.js"> </script>
+<body>
+<div id="sisalto">
+  <h1>Tietokannan testauslomake</h1>
+
+<p>Tietokanna testaaminen tapahtuu tällä opintojaksolla tietokannalle laaditun testauslomakkeen avulla. Testitapauksien suunnittelussa tulee huomioita kyseisen tietokannan tarkoitus ja tavanomaiset käyttötavat. Käytännössä tarkoitus on testata tauluihin tiedon syöttäminen, tietojen päivittäminen ja poistaminen. Poistamisessa tarkoitus on myös varmistaa viite-ehyksien toimiminen halutulla tavalla (RESTRICT tai CASCADE).</p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <th width="102">Testattava    asia</p></th>
+    <th width="136">SQL-lause</p></th>
+    <th width="289">Mitä    pitäisi tapahtua</p></th>
+    <th width="142">Mitä    tapahtui</p></th>
+    <th width="94">Milloin    testattu ja milloin korjattu</p></th>
+  </tr>
+  <tr>
+    <td>Asiakkaan lisääminen</p></td>
+    <td>INSERT INTO <strong>asiakas </strong>jne.</p></td>
+    <td>Uusi asiakas lisätään tauluun</p></td>
+    <td>&nbsp;</p></td>
+    <td>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>Tuoteryhmän lisääminen</p></td>
+    <td>INSERT INTO <strong>tuoteryhma</strong> (nimi) VALUES ('testi')</p></td>
+    <td>Uusi tuoteryhmä lisätään tauluun</p></td>
+    <td>&nbsp;</p></td>
+    <td>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>Tuotteen lisääminen</p></td>
+    <td>INSERT INTO <strong>tuotteet</strong> jne.</p></td>
+    <td>Uusi tuote lisätään tauluun</p></td>
+    <td>&nbsp;</p></td>
+    <td>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>Tuoteryhmän poistaminen</td>
+    <td>DELETE tuoteryhma WHERE nimi='testi'</td>
+    <td>Virheilmoitus poistamisesta, ei voi poistaa kun tuoteryhmällä on jo tietueita (RESTRICT). TAI tuoteryhmä ja tämän sisältämät tuotteet poistetaan (CASCADE).</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>Testitapauksien järjestys kannattaa miettiä siten, että ensin lisätään äititauluun tietue ja tämän jälkeen lapsitauluun uusi tietue.</p>
+<h5>Tietojen lisääminen (INSERT)</h5>
+<p>Laaditaan INSERT-kyselyt joilla voidaan varmistaa tiedon lisääminen tietokannan tauluihin.</p>
+<h5>Tietojen poistaminen (DELETE)</h5>
+<p>DELETE-kyselyiden avulla kokeillaan voidaanko poistaa tiedot tauluista, yleensä kannattaa testata erityisesti taulut joiden välillä on yhteyksiä. </p>
+<ul>
+  <li>Voidaanko tilausta poistaa jos sillä on tilausrivejä syötettynä? Poistuuko tilaus poistettaessa myös tilausrivit (CASCADE) vai annetaanko virheilmoitus (RESTRICT)? Kumpi tapa on haluttu?</li>
+</ul>
+<h5>Tietojen päivittäminen (UPDATE)</h5>
+<p>UPDATE-kyselyllä voi testata onnistuuko tiedon päivittäminen taluissa oikein.</p>
+<h5>Tietojen hakeminen (SELECT)</h5>
+<p>SELECT-kyselyissä kannattaa miettiä mitkä ovat tavallisimmat hakukyselyt joita tietokannan taululle halutaan tehdä.</p>
+<ul>
+  <li>Asiakkaan nimellä haku (LIKE)</li>
+  <li>Tuotteen tuotekoodilla haku</li>
+  <li>Asiakkaan tilauksien haku</li>
+</ul>
+<h5>Tietojen hakeminen useista tauluista (INNER JOIN)</h5>
+<p>SELECT-kyselyillä voidaan testata myös toimivatko useita tauluja sisältävät tavalliset käyttötapaukset oikein</p>
+<ul>
+  <li>Tietyn asiakkaan tilauksien ja tilausrivien hakeminen halutulla tavalla (mukana asiakkaan nimi, tuotteiden nimet ja hinnat)</li>
+  <li>Tietyn asiakkaan antamien palautteiden hakeminen</li>
+  <li>Tietyn tuoteryhmän tuotteiden hakeminen</li>
+</ul>
+</div>
+<script type="text/javascript" src="footer.js"> </script> 
+</body>
+</html>

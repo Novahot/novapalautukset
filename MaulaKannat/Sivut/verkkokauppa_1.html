@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verkkokaupan tietokanta (I)</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script type="text/javascript" src="header2.js"> </script>
+<body>
+<div id="sisalto">
+  <h1>1. Verkkokaupan tietokanta</h1>
+  
+  <p>Tehtävänäsi on suunnitella verkkokauppaa varten relaatiotietokanta, joka toteutetaan MySQL:llä. <b>Työ on tarkoitus saada valmiiksi perjantain 17.8 tunneilla</b>.
+<p>Tehtävästä syntyy pikkuhiljaa Wordilla tehty <a href="harj1_verkkokauppa_esimerkki.pdf">tietokantadokumentti</a> (siis vain 1 tiedosto), jossa ovat seuraavien vaiheiden mukaiset kuvaukset. Tämä on yksi kurssin pakollisista tehtävistä.
+<h4>Vaiheet</h4>
+<ol><h5>ER-kaavio ja tietokantakaavio</h5>
+<li>Mieti ensin, mitä tietoja verkkokaupassa tarvitaan (pelkät tuotteet eivät riitä). Tee ER-kaavio suunnittelemasi tietokannan käsitteistöstä.<p><img src="../Kuvat/chens_database_notation.png" width="150" /></p></li>
+
+<li>Tee tietokannan rakenteen kuvaus (Visio: Software /  UML Database Notation). Huom.! Tähän kuuluvat myös kenttäkohtaiset määritykset.<p><img src="../Kuvat/uml_database_notation.png" width="150" /></p></li>
+
+<li>Esittele suunnitelmasi opelle ja korjaa tarvittaessa.</li>
+<h5>MySQL-toteutus</h5>
+<li>Luo taulukot MySQL-tietokantaan.  Tee luontilausekkeet (SHOW CREATE TABLE taulukon_nimi). Huom.! Taulukot kannattaa nimetä niin, että jokaisen edessä on jokin sama tunniste, joka kertoo, että ne kuuluvat juuri tähän tietokantaan. (esimerkiksi "h1_asiakkaat")</li>
+
+<li>Luo yhteydet ja viite-eheydet. (Katso <a href="phpmyadmin.html">erillinen ohjeistus</a>.) Tulosta tietokannastasi luontilauseet vasta viite-eheyden lisäämisen jälkeen.</li>
+<li>Syötä jonkin verran dataa tietokantaan.</li>
+<h5>Testitapaukset</h5>
+<li>Laaditaan yksinkertainen testauslomake ja siihen kyselyitä joilla kokeillaan tietokannan käyttämistä. Pyri miettimään tyypillisiä käyttötapoja tietokannallesi. Tarkoitus on, että mukana on vähintään yksi SELECT, DELETE yms. -kysely. Kaikissa tauluissa ei tarvitse olla kaikkia tyyppejä mutta kaikkia tauluja tulisi testata jotenkin.</li>
+
+<table width="505" height="138">
+<tr><th height="29">Testattava asia	</th><th>SQL-lause	</th><th>Mitä pitäisi tapahtua	</th><th>Mitä tapahtui	</th><th>Milloin testattu </th><th>Milloin korjattu</th></tr>
+<tr><td height="25"></td><td></td><td></td><td></td><td></td><td></td></tr>	
+<tr><td height="20"></td><td></td><td></td><td></td><td></td><td></td></tr>	
+<tr><td height="24"></td><td></td><td></td><td></td><td></td><td></td></tr>	
+<tr><td height="26"></td><td></td><td></td><td></td><td></td><td></td></tr>	
+</table>				
+				
+<ul>
+<li>a.	Insert</li>
+<li>b.	Delete Huom.! Viite-eheyden testaus</li>
+<li>c.	Update</li>
+<li>d.	Select</li>
+<li>e.	Select useampaan taulukkoon</li>
+</ul>
+<p>Millaisia kyselyt olisivat?
+<ul>
+	<li>Uuden asiakkaan </li>
+</ul>
+</p>
+<li>Testaa tietokantasi ja täytä samalla tapausluetteloa. </li>
+<h5>MS Word-asiakirja</h5>
+<li>Liitä palautustiedostoon tieto siitä, miten pääsen testaamaan tietokantaasi (tietokannan nimi, tunnus, yms.)</li>
+<ul>
+	<li><a href="harj1_verkkokauppa_esimerkki.pdf">Esimerkki MS Word-asiakirjasta</a></li>
+</ul>
+</ol>
+
+<p>Koko työ palautetaan sähköpostilla (vain yksi liite) (eerikki.maula(a)tampere.fi).
+
+
+<h4>Lisäselvitystä verkkokaupasta</h4>
+
+<p>Mieti tarkkaan, mitkä seuraavista toiminnoista vaikuttavat ja liittyvät tietokantaan
+<p>Asiakas
+<ul>
+<li>voi lukea tiedotteita</li>
+<li>voi selailla kaupan tuotteita ja tuoteryhmiä</li>
+<li>voi rekisteröityä </li>
+<li>voi tilata ja valita maksutavan </li>
+<li>voi seurata ostoskoriaan</li>
+<li>voi seurata teknisiä vaiheita ostoprosessissa (teknisillä vaiheilla tarkoitetaan rekisteröitymistä, tuotteiden keräämistä ostoskoriin ja tilauksen hyväksymistä)</li> 
+<li>saa vahvistuksen kaupasta yhteystietoineen ja peruuttamis- ja palauttamisohjeineen</li>
+<li>voi peruuttaa missä vaiheessa tahansa tilauksen</li>
+<li>voi antaa palautetta palautelomakkeella</li>
+</ul>
+<p>Lisäksi asiakas
+<ul>
+<li>voi lukea kuluttajansuojalain mukaiset yrityksen yhteystiedot (kuvitellussa yrityksessäkin on oltava merkittynä paikka, jossa rekisteritunnukset ovat)</li>
+<li>voi varmistaa, että henkilötietojen käsittely on tietosuojavaltuutetun ohjeiden mukaista – esimerkki lain vaatimat rekisteriselosteet</li>
+<li>voi lukea sopimusehdot ennen tilauksen hyväksymistä </li>
+<li>voi lukea kaupan peruuttamisohjeet</li>
+</ul>
+<p>Kaupan ylläpitäjä 
+<ul>
+<li>voi lisätä, päivittää ja poistaa tuoteryhmiä ja tuotteita tuotetietoineen ja kuvineen (muista myös linkit valmistajan kotisivustolle)</li>
+<li>päivittää tiedotteita sivustolla</li>
+<li>hallinnoida (seurata, päivittää ja poistaa) tilauksia</li>
+<li>hallinnoida (seurata, päivittää ja poistaa) rekisteröityneitä asiakkaita</li>
+<li>lukea seurantaraportteja (esim. toteutuneista kaupoista jne.)</li>
+<li>lukea ja antaa vastauksia asiakaspalautteisiin</li>
+</ul>
+</div>
+<script type="text/javascript" src="footer.js"> </script></body>
+</html>

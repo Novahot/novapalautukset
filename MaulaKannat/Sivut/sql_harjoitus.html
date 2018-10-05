@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQL-harjoitus</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script type="text/javascript" src="header2.js"> </script>
+<body>
+<div id="sisalto">
+  <h1>2. SQL-harjoitus</h1>
+  <p>Seuraavista tehtävistä suurin osa perustuu oheiseen  tietokantaan. Kirjoita vastaukset MS Word-asiakirjaan tai tekstitiedostoon, numeroi tehtävät. Lähetä vastauksesi sähköpostin liitteenä minulle. </p>
+  <p> <img src="../Kuvat/harjoitus_2_sql.png" width="681" height="524" alt=""/> </p>
+  <ol>
+    <li>Millaisella Create-komennolla saat luotua  Managerit-taulukon? Mieti järkevät MySQL:n mukaiset kenttätyypit. Huom.! Kaikki  kentät ovat pakollisia.</li>
+    <li>Millaisella  Create-lauseella saat luotua Esiintyjat-taulukon? Huom.! viiteavain</li>
+    <li>Millaisella <span class="korostus">ALTER</span>-komennolla saat muutettua jo  luodun Musiikkityylit-taulukon Tyylin nimi -kentän tyypin (alunperin text 9,  mutta pitäisi olla varchar 20)?</li>
+    <li>Millaisella <span class="korostus">ALTER</span>-komennolla saat lisättyä jo luotuun Asiakkaat-taulukkoon  puhelinnumerokentän?</li>
+    <li>Tee kysely, jonka tuloksena saat selville,  kuinka monta keikkaa kultakin esiintyjältä on talletettu tietokantaan.  Vastauksessa pitää näkyä esiintyjän taiteilijanimi.</li>
+    <li>Tee kysely, joka hakee kaikki tänä vuonna tehdyt  keikat. Vastauksessa pitää näkyä esiintyjän taiteilijanimi ja asiakkaan nimitiedot.  Tulokset pitäisi olla keikkapäivän mukaisessa nousevassa järjestyksessä.</li>
+    <li>Millaisella  SQL-komennolla saat
+      <ul>
+        <li>tyhjennettyä Managerit-taulukon?</li>
+        <li>Entäpä tuhottua koko taulukon?</li>
+      </ul>
+    </li>
+    <li>Mitä seuraava komento saa aikaan?</li>
+    <pre>SELECT Postitoimipaikka, COUNT(*)
+FROM Ihmiset
+WHERE Postitoimipaikka in (&lsquo;Tampere&rsquo;, &lsquo;Turku&rsquo;, &lsquo;Helsinki&rsquo;)                             
+GROUP BY  Postitoimipaikka         
+HAVING COUNT(*)&gt; 2</pre>
+    <li>Mitä ihmettä seuraava suoraan netistä kaapattu  SQL-lause mahtaa tehdä? Kerro se selkeällä suomenkielisellä virkkeellä.</li>
+    <pre>SELECT ENimi, SNimi, Ika 
+FROM Ihmiset 
+WHERE ENimi LIKE '%a%' AND (NOT SNimi='Kallela'  OR Ika&lt;30) 
+OR Ika  BETWEEN 40 AND 50 
+AND  ENimi IN ('Kalle','Simo','Ville','Tiina','Minna') 
+AND NOT  (Ika=15 AND ENimi IN ('August','Kustaa') 
+OR Ika BETWEEN 10 AND 13);</pre>
+    <li>Mitä oheinen SQL-lauseke saa aikaan. Mieti  erityisesti, mikä merkitys on <span class="korostus">DISTINCT</span>-määreellä.</li>
+    <pre>SELECT DISTINCT Asiakkaat.Nimi
+FROM Asiakkaat INNER JOIN Myynnit
+ON Asiakkaat.AsiakasID = Myynnit.Asiakas;</pre>
+    <li>Selvitäpä netin avulla, miten <span class="korostus">LEFT JOIN</span> ja <span class="korostus">RIGHT  JOIN</span> eroavat meille jo tutusta <span class="korostus">INNER JOIN</span>ISTA. Tee molemmista kuvaava esimerkki  käyttäen yllä olevaa tietokantaa ja vaikkapa sen taulukoita Asiakkaat ja  Managerit.</li>
+    <li>Mitä phpmyadminin tuottamassa SELECT-lauseessa  komento <span class="korostus">LIMIT</span> saa aikaan?</li>
+    <li>Mitä tekee <span class="korostus">CONCAT</span>-funktio? Anna myös esimerkki.</li>
+  </ol>
+</div>
+<script type="text/javascript" src="footer.js"> </script>
+</body>
+</html>

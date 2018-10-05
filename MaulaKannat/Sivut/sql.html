@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQL-komennoista</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script type="text/javascript" src="header2.js"> </script>
+<body>
+<div id="sisalto">
+  <h1>SQL-komennoista</h1>
+ 
+ 
+ 
+ <h4>Taulujen ja kenttien nimeäminen</h4> 
+
+<p>Suositeltavaa on käyttää kirjaimia a-Z. Voit käyttää myös alaviivaa (_) sekä numeroita. Ääkkösien ja välilyöntien käyttämistä kannattaa välttää.
+
+<p>Pää- ja vierasavainten nimissä on suositeltavaa käyttää ID-liitettä. Yksi tapa on nimetä pääavaimet id-alkuliitteellä ja vierasavaimet ID-loppuliitteellä.
+
+<p>Esimerkki:
+
+<table>
+<tr><th width="95">Kenttä</th>	<th width="145">Kuvaus</th></tr>
+<tr><td>idAsiakas</td><td>	pääavain</td></tr>
+<tr><td>nimi	</td><td>kenttä</td></tr>
+<tr><td>osoite	</td><td>kenttä</td></tr>
+<tr><td>TyyppiID</td><td>	vierasavain</td></tr>
+</table>
+
+<table>
+<tr><th width="96">Kenttä</th>	<th width="146">Kuvaus</th></tr>
+<tr><td>idTyyppi</td><td>	pääavain</td></tr>
+<tr><td>nimi</td><td>	kenttä	</td></tr>
+</table>
+
+<h4>CREATE TABLE</h4>
+
+<p></p>
+
+<pre>
+CREATE TABLE Asiakas
+(
+
+)
+</pre>
+
+<h5>Rajoitteet (constraints)</h5>
+<table>
+<tr><th>NOT NULL</th><th>Kenttä ei voi olla tyhjä (NULL)</th></tr>
+<tr><td>UNIQUE</td><td>Jokaisen tämän kentän arvon tulee olla yksilöllinen</td></tr>
+<tr><td>PRIMARY KEY</td><td>Kenttä on taulun pääavain</td></tr>
+<tr><td></td><td></td></tr>
+</table>
+
+<h5>Tietotyypit</h5>
+<table>
+<tr><th>Tietotyyppi</th><th>Kuvaus</th></tr>
+<tr><td>int</td><td>Kokonaisluku</td></tr>
+<tr><td>varchar (20)</td><td>Merkkijono, suluissa pituus</td></tr>
+<tr><td></td><td></td></tr>
+</table>
+
+<h5>Vierasavainten määrittely</h5>
+
+<p></p>
+
+<h4>SELECT</h4>
+
+<pre>
+SELECT sarake, sarake FROM taulu
+SELECT * FROM taulu</pre>
+
+<p>Esimerkki:
+
+<pre>SELECT nimi, osoite FROM asiakkaat</pre>
+
+<h5>WHERE</h5>
+
+<p>WHERE-komennolla rajoitetaan SELECT-lauseen tuloksia.
+
+<pre>SELECT sarake, sarake FROM taulu WHERE sarake operaattori arvo</pre>
+
+<table>
+<tr><th width="91">Operaattori</th>	<th width="283">Kuvaus</th></tr>
+<tr><td>=	</td><td>Yhtäsuuri</td></tr>
+<tr><td>&lt;&gt;	</td><td>Eri suuri</td></tr>
+<tr><td>&gt;	</td><td>Suurempi kuin</td></tr>
+<tr><td>&lt;	</td><td>Pienempi kuin</td></tr>
+<tr><td>&gt;=	</td><td>Suurempi tai yhtä suuri kuin</td></tr>
+<tr><td>&lt;=	</td><td>Pienempi tai yhtä suuri kuin</td></tr>
+<tr><td>BETWEEN	</td><td>välillä</td></tr>
+<tr><td>LIKE	</td><td>tekstihaussa</td></tr>
+<tr><td>IN	</td><td>haettaessa useista eri sarakkeista</td></tr>
+</table>
+
+<p>Operaattoreita voidaan yhdistää AND ja OR -operaattoreilla.
+
+<p>Esimerkki:
+
+<pre>
+SELECT nimi, osoite FROM asiakkaat WHERE nimi='Maula'
+SELECT nimi, ika FROM asiakkaat WHERE ika &gt; 18
+SELECT * FROM asikkaat WHERE nimi LIKE 'Mau%'
+</pre>
+<h5>ORDER BY</h5>
+
+<p>Haun järjestäminen tapahtuu ORDER BY -käskyn avulla.
+
+<pre>SELECT sarake1, sarake2 FROM taulu ORDER BY sarake1 ASC/DESC, sarake2 ASC/DESC</pre>
+
+
+<h4>INSERT INTO</h4>
+
+<p>Tietojen lisääminen tapahtuu INSERT INTO-lauseella.
+
+<pre>INSERT INTO taulu VALUES (arvo1, arvo2, arvo3)</pre>
+
+<p>Esimerkki
+
+<pre>
+INSERT INTO asiakkaat VALUES ('testi', 'testi', 20)
+INSERT INTO asiakkaat (idAsiakkaat, nimi, osoite, ika) VALUES (5, 'testi', 'testi', 20)</pre>
+
+
+<h4>UPDATE</h4>
+
+<p>Tiedon päivittäminen tapahtuu UPDATE-komennon avulla. Huom: muista WHERE-rajoitus tai kaikki taulun tietueet päivittyvät!
+
+<pre>
+UPDATE taulu SET sarake1=arvo1, sarake2=arvo2
+WHERE sarake=syote;</pre>
+
+<p>Esimerkki
+
+<pre>
+UPDATE asiakkaat SET nimi='testi2', osoite='testi3'
+WHERE nimi='tyhjä';</pre>
+
+<h4>DELETE</h4>
+
+<p>Tietojen poistminen tapahtuu DELETE-komennon avulla. Muista WHERE-ehto tai kaikki taulun tiedot poistetaan.
+
+<pre>DELETE FROM taulu WHERE sarake=syote</pre>
+
+
+<h4>Liitokset</h4>
+
+<h5>INNER JOIN</h5>
+
+<p>Hakee tiedot joissa molempien taulujen tiedot yhteisiä.
+
+<p><img src="../Kuvat/inner_join.png" />
+
+<h5>LEFT JOIN</h5>
+
+<p>Hakee vasemman puolen taulun tiedot ja yhteiset tiedot. Puuttuvissa tiedoissa NULL-arvot.
+
+<p><img src="../Kuvat/left_join.png" />
+<h5>RIGHT JOIN</h5>
+
+<p>Hakee oikean puolen taulun tiedot ja yhteiset tiedot. Puuttuvissa tiedoissa NULL-arvot.
+
+<p><img src="../Kuvat/right_join.png" />
+<h5>FULL JOIN</h5>
+ 
+ <p><img src="../Kuvat/full_join.png" />
+
+ 
+ 
+</div>
+<script type="text/javascript" src="footer.js"> </script></body>
+</html>
